@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        ".vscode": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/venv": true,
+        "*.code-workspace": true,
+        ".pylintrc": true,
+        ".gitignore": true
+    }
+}

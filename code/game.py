@@ -16,4 +16,12 @@ class Game():
 		self.plane = plane.Plane()
 		# Gen a new Mission
 		self.mission = mission.Mission()
+
+		# Game Loop
+		self.mission.m1() # Calc target (Name, Location, Distance)
+		self.mission.m2() # Calc the current weather
+		self.mission.m3() # Calc plane formation position
+		# Loop
+		while not self.mission.mission_ended:
+			self.mission.m4() # Move the plane
 		log('== Ending Game Prep ==')

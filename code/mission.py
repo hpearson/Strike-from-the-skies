@@ -42,6 +42,16 @@ class Mission():
 		log(f'The bombing target is for: {self.target_type}')
 
 	def mission_2(self):
+		''' Calc plane starting formation & postion '''
+		position_list = ['Lead', 'Middle', 'Tail']
+		self.formation_position = roll_list(position_list)
+		log(f'The bomber is: {self.formation_position} position')
+
+		squadron_list = ['High', 'Middle', 'Low']
+		self.squadron_position = roll_list(squadron_list)
+		log(f'The bomber is: {self.squadron_position} of the squadron')
+
+	def mission_3(self):
 		''' Calc the weather '''
 		weather_num = None
 		weather_list = ['Bad', 'Poor', 'Good', 'Great']
@@ -67,16 +77,6 @@ class Mission():
 			# Calc initial weather
 			self.weather = roll_list(weather_list)
 			log(f'Takeoff weather condition is: {self.weather}')
-
-	def mission_3(self):
-		''' Calc plane starting formation & postion '''
-		position_list = ['Lead', 'Middle', 'Tail']
-		self.formation_position = roll_list(position_list)
-		log(f'The bomber is: {self.formation_position} position')
-
-		squadron_list = ['High', 'Middle', 'Low']
-		self.squadron_position = roll_list(squadron_list)
-		log(f'The bomber is: {self.squadron_position} of the squadron')
 
 	def mission_4(self):
 		''' Calc movement for plane '''

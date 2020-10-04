@@ -9,6 +9,3 @@ class Plane():
 		''' Prep Init Values '''
 		self.max_speed = 300
 		self.cur_speed = 100
-		log('== Starting Plane Prep ==')
-
-		log('== Ending Plane Prep ==')

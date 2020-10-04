@@ -9,7 +9,6 @@ import plane
 class Game():
 	''' Setup Game Vars '''
 	def __init__(self):
-		log('== Starting Game Prep ==')
 		# Start at mission zero
 		self.mission = 0
 		# Gen a new plane
@@ -24,4 +23,3 @@ class Game():
 		while not self.mission.mission_ended:
 			self.mission.mission_3() # Calc the current weather
 			self.mission.mission_4() # Move the plane
-		log('== Ending Game Prep ==')

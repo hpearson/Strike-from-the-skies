@@ -24,9 +24,6 @@ class Mission():
 		self.above_target = False
 		self.mission_ended = False
 
-		log('== Starting Mission Prep ==')
-		log('== Ending Mission Prep ==')
-
 	def mission_1(self):
 		''' Calc the target '''
 		target_list = []

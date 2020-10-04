@@ -5,4 +5,4 @@ import random
 
 def roll(min_num, max_num):
 	''' Roll a xdx '''
-	return random.random(min_num, max_num)
+	return random.randint(min_num, max_num)

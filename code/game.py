@@ -1,7 +1,6 @@
 '''
 Setup a class to hold the game information
 '''
-from libraries.log import log
 
 import mission
 import plane

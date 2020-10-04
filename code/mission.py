@@ -27,7 +27,7 @@ class Mission():
 		log('== Starting Mission Prep ==')
 		log('== Ending Mission Prep ==')
 
-	def m1(self):
+	def mission_1(self):
 		''' Calc the target '''
 		target_list = []
 		# Location Name, Distance, Type
@@ -41,7 +41,7 @@ class Mission():
 		log(f'{self.target_name} is {self.target_distance} miles away')
 		log(f'The bombing target is for: {self.target_type}')
 
-	def m2(self):
+	def mission_2(self):
 		''' Calc the weather '''
 		weather_num = None
 		weather_list = ['Bad', 'Poor', 'Good', 'Great']
@@ -68,7 +68,7 @@ class Mission():
 			self.weather = roll_list(weather_list)
 			log(f'Takeoff weather condition is: {self.weather}')
 
-	def m3(self):
+	def mission_3(self):
 		''' Calc plane starting formation & postion '''
 		position_list = ['Lead', 'Middle', 'Tail']
 		self.formation_position = roll_list(position_list)
@@ -78,7 +78,7 @@ class Mission():
 		self.squadron_position = roll_list(squadron_list)
 		log(f'The bomber is: {self.squadron_position} of the squadron')
 
-	def m4(self):
+	def mission_4(self):
 		''' Calc movement for plane '''
 		# TODO let player choose
 		# TODO Ground

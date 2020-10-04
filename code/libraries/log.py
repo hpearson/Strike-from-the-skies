@@ -2,13 +2,14 @@
 Use this libarie create console logs & print to file
 '''
 import logging
+import os
 from datetime import datetime
 
 def log(log_info):
 	'''
 	Setup and load logging configs
 	'''
-	logfile = './logs/'
+	logfile = os.getcwd() + '\\..\\logs\\' # Go up 1 DIR and into 'logs' folder
 	logfile += datetime.now().strftime("%m.%d.%Y  %H.%M.%S")+'.log'
 	handler = logging.FileHandler(logfile)
 

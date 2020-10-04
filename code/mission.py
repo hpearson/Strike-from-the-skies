@@ -8,14 +8,16 @@ from libraries.clamp import clamp
 class Mission():
 	''' Setup Mission Vars '''
 	def __init__(self):
+		''' Prep Init Values '''
 		self.weather = None
+
+
 		log('== Starting Mission Prep ==')
 		# Calc the current weather
 		self._gen_weather()
 		# Calc target
 		# Calc target distance
 		# Calc target type
-		# Calc bomb loadout
 		log('== Ending Mission Prep ==')
 
 	def _gen_weather(self):

@@ -6,12 +6,14 @@ from libraries.dice import roll, roll_list
 from libraries.clamp import clamp
 
 import plane
+import enemy
 
 class Mission():
 	''' Setup Mission Vars '''
 	def __init__(self):
 		''' Prep Init Values '''
 		self.plane = plane.Plane()
+		self.enemies = []
 
 		self.weather = None
 		self.target_name = None
@@ -54,21 +56,18 @@ class Mission():
 		weather_list = ['Bad', 'Poor', 'Good', 'Great']
 		if self.weather:
 			# Calc weather changes
-			result = roll(1, 3)
+			result = roll(1, 2)
 			weather_num = weather_list.index(self.weather)
 			if result == 1:
 				# Weather worstens
 				weather_num -= 1
 				self.weather = weather_list[clamp(weather_num, 0, 3)]
-				log(f'The weather worsened into: {self.weather}')
+				log(f'The weather changed into: {self.weather}')
 			if result == 2:
-				# Weather does not change
-				log(f'No changes to the weather, still: {self.weather}')
-			if result == 3:
 				# Weather improves
 				weather_num += 1
 				self.weather = weather_list[clamp(weather_num, 0, 3)]
-				log(f'The weather improved into: {self.weather}')
+				log(f'The weather changed into: {self.weather}')
 
 		if not self.weather:
 			# Calc initial weather
@@ -110,3 +109,11 @@ class Mission():
 				self.distance_progress =  self.distance_progress - self.target_distance
 				remaining = self.target_distance - self.distance_progress
 				log(f'The plane is {remaining} miles away from {self.target_name}')
+
+	def mission_5(self):
+		''' Used to spawn enemies '''
+		result = roll(1, 3)
+		for _ in range(result):
+			aggressor = enemy.Enemy()
+			self.enemies.append(aggressor)
+			log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')

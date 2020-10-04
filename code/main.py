@@ -2,15 +2,22 @@
 Bootstrap the game
 '''
 import os
-from libraries.log import log
-from libraries.dice import roll
 
-from objects import game
+import game
 
 # Set the OS CWD to script location
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-log('== Starting Game ==')
-roll(1, 6)
-
 GAME = game.Game()
+
+# Step 0 Prep
+# Step 1 Calc Weather
+# Step 2 Move plane (landing, ground, water, air, bailout)
+# Step 3 Spot enemies
+# Step 4 Shoot at enemies
+# Step 5 Enemy dmg calc
+# Step 6 Enemy shoot
+# Step 7 Flak shoot
+# Step 8 Calc plane dmg
+# Step 9 reactions
+# Repeat

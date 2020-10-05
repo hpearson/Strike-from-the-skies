@@ -117,3 +117,7 @@ class Mission():
 			aggressor = enemy.Enemy()
 			self.enemies.append(aggressor)
 			log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
+
+	def mission_6(self):
+		''' Used to shoot at the enemies '''
+		pass

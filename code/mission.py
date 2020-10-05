@@ -154,6 +154,7 @@ class Mission():
         return alive_agressors
 
     def _can_target(self, seat, position, elevation):
+        ''' Can this seat shoot this location '''
         for _ in seat.targetable:
             if _.get('Position') == position and _.get('Elevation') == elevation:
                 return True

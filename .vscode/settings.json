@@ -11,4 +11,5 @@
     ,"python.linting.pycodestyleEnabled": true
     ,"python.linting.pycodestyleArgs": ["--max-line-length=160"]
     ,"python.linting.pylintEnabled": true
+    ,"python.linting.pylintArgs": ["--disable", "line-too-long"]
 }

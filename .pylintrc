@@ -1,5 +1,4 @@
 ﻿[MASTER]
-indent-string='\t'
 disable = too-many-instance-attributes
             , too-many-branches
             , too-many-statements

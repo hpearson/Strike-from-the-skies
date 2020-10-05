@@ -8,4 +8,7 @@
         ".pylintrc": true,
         ".gitignore": true
     }
+    ,"python.linting.pycodestyleEnabled": true
+    ,"python.linting.pycodestyleArgs": ["--max-line-length=160"]
+    ,"python.linting.pylintEnabled": true
 }

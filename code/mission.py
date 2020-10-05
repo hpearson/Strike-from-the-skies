@@ -112,12 +112,43 @@ class Mission():
 
 	def mission_5(self):
 		''' Used to spawn enemies '''
+
+		# Spawn new enemy
 		result = roll(1, 3)
 		for _ in range(result):
 			aggressor = enemy.Enemy()
 			self.enemies.append(aggressor)
+
+		# Display all enemies in the area
+		for aggressor in self._list_alive_enemies():
 			log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
 
 	def mission_6(self):
 		''' Used to shoot at the enemies '''
-		pass
+
+		# Assign Targets
+		for _ in self._list_alive_enemies():
+			for seat in self.plane.seats:
+				if self._can_target(self.plane.seats[seat], _.position, _.elevation):
+					self.plane.seats[seat].targeting = _
+					print(f'{seat} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
+
+		# Shoot at Targets
+		for seat in self.plane.seats:
+			if self.plane.seats[seat].targeting:
+				print(f'{seat} is shooting: {self.plane.seats[seat].targeting.type}')
+				self.plane.seats[seat].targeting.alive = False
+
+	def _list_alive_enemies(self):
+		''' Filter dead enemies and return the living '''
+		alive_agressors = []
+		for _ in self.enemies:
+			if _.alive:
+				alive_agressors.append(_)
+		return alive_agressors
+
+	def _can_target(self, seat, position, elevation):
+		for _ in seat.targetable:
+			if _.get('Position') == position and _.get('Elevation') == elevation:
+				return True
+		return False

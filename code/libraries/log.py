@@ -10,7 +10,7 @@ def log(log_info):
 	Setup and load logging configs
 	'''
 	logfile = os.getcwd() + '\\..\\logs\\' # Go up 1 DIR and into 'logs' folder
-	logfile += datetime.now().strftime("%m.%d.%Y_%H.%M.%S")+'.log'
+	logfile += datetime.now().strftime("%m.%d.%Y_%H.%M")+'.log'
 	handler = logging.FileHandler(logfile)
 
 	text_format = '%(asctime)s | %(levelname)-10s | %(name)s | %(message)s'

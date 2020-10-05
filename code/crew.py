@@ -11,6 +11,7 @@ class Crew():
 		self.age = None
 		self.training = seat
 		self.targetable = []
+		self.targeting = None
 
 		# Where can this seat target
 		self._assign_targetable()

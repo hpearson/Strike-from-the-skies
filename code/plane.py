@@ -23,3 +23,11 @@ class Plane():
                         'Starboard': crew.Crew('Starboard'),
                         'Tail': crew.Crew('Tail')
         }
+        self.sections = {
+                            'Nose': 10,
+                            'Pilot': 10,
+                            'Middle': 10,
+                            'Tail': 10,
+                            'Port': 10,
+                            'Starboard': 10
+        }

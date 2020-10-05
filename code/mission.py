@@ -2,7 +2,7 @@
 Setup a class to hold the mission information
 '''
 from libraries.log import log
-from libraries.tools import clamp, can_target, roll, roll_list, alive_enemies
+from libraries.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
 
 import plane
 import enemy
@@ -161,3 +161,11 @@ class Mission():
             print('Flak hits!')
         if result == 1:
             print('Flak misses!')
+
+    def mission_9(self):
+        ''' Calculate damage to the plane '''
+        hits = 5
+        for _ in range(hits):
+            section = roll_dict(self.plane.sections)
+            print(f'{section} was damaged')
+            self.plane.sections[section] -= 1

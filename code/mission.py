@@ -146,5 +146,10 @@ class Mission():
 
     def mission_7(self):
         ''' Enemies shoot at plane '''
-        pass
-
+        agressors = alive_enemies(self.enemies)
+        for agressor in agressors:
+            result = roll(1, 2)
+            if result == 2:
+                print(f'{agressor.type} attacks and hits!')
+            if result == 1:
+                print(f'{agressor.type} attacks and misses!')

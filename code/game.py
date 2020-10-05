@@ -22,3 +22,4 @@ class Game():
             self.mission.mission_4()  # Move the plane
             self.mission.mission_5()  # Spawn enemies
             self.mission.mission_6()  # Target enemies
+            self.mission.mission_7()  # Enemies target

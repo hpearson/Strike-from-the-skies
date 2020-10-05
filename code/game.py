@@ -25,3 +25,4 @@ class Game():
             self.mission.mission_7()  # Enemies target
             self.mission.mission_8()  # Flak target
             self.mission.mission_9()  # Calculate damge to plane
+            self.mission.mission_10()  # Calculate stress to plane

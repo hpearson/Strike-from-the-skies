@@ -169,3 +169,10 @@ class Mission():
             section = roll_dict(self.plane.sections)
             print(f'{section} was damaged')
             self.plane.sections[section] -= 1
+
+    def mission_10(self):
+        ''' Calculate stress to the plane '''
+        for section in self.plane.sections:
+            if self.plane.sections[section] < 5:
+                self.plane.sections[section] -= 1
+                print(f'{section} took stess damage')

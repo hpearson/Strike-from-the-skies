@@ -153,3 +153,11 @@ class Mission():
                 print(f'{agressor.type} attacks and hits!')
             if result == 1:
                 print(f'{agressor.type} attacks and misses!')
+
+    def mission_8(self):
+        ''' Calculate flak shots '''
+        result = roll(1, 2)
+        if result == 2:
+            print('Flak hits!')
+        if result == 1:
+            print('Flak misses!')

@@ -2,7 +2,7 @@
 Setup a class to hold the mission information
 '''
 from libraries.log import log
-from libraries.tools import clamp, can_target, roll, roll_list
+from libraries.tools import clamp, can_target, roll, roll_list, alive_enemies
 
 import plane
 import enemy
@@ -120,14 +120,14 @@ class Mission():
             self.enemies.append(aggressor)
 
         # Display all enemies in the area
-        for aggressor in self._list_alive_enemies():
+        for aggressor in alive_enemies(self.enemies):
             log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
 
     def mission_6(self):
         ''' Used to shoot at the enemies '''
 
         # Assign Targets
-        for _ in self._list_alive_enemies():
+        for _ in alive_enemies(self.enemies):
             for seat in self.plane.seats:
                 if can_target(self.plane.seats[seat], _.position, _.elevation):
                     self.plane.seats[seat].targeting = _
@@ -144,10 +144,7 @@ class Mission():
                 if result == 1:
                     print(f'{seat}: Missed')
 
-    def _list_alive_enemies(self):
-        ''' Filter dead enemies and return the living '''
-        alive_agressors = []
-        for _ in self.enemies:
-            if _.alive:
-                alive_agressors.append(_)
-        return alive_agressors
+    def mission_7(self):
+        ''' Enemies shoot at plane '''
+        pass
+

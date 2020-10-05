@@ -25,3 +25,12 @@ def roll(min_num, max_num):
 def roll_list(input_list):
     ''' Pull 1 from list '''
     return random.choice(input_list)
+
+
+def alive_enemies(enemies):
+    ''' Filter dead enemies and return the living '''
+    alive_agressors = []
+    for _ in enemies:
+        if _.alive:
+            alive_agressors.append(_)
+    return alive_agressors

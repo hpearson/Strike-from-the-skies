@@ -138,7 +138,12 @@ class Mission():
         for seat in self.plane.seats:
             if self.plane.seats[seat].targeting:
                 print(f'{seat} is shooting: {self.plane.seats[seat].targeting.type}')
-                self.plane.seats[seat].targeting.alive = False
+                result = roll(1, 2)
+                if result == 2:
+                    self.plane.seats[seat].targeting.alive = False
+                    print(f'{seat} shot down: {self.plane.seats[seat].targeting.type}')
+                if result == 1:
+                    print(f'{seat}: Missed')
 
     def _list_alive_enemies(self):
         ''' Filter dead enemies and return the living '''

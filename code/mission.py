@@ -2,8 +2,7 @@
 Setup a class to hold the mission information
 '''
 from libraries.log import log
-from libraries.dice import roll, roll_list
-from libraries.clamp import clamp
+from libraries.tools import clamp, can_target, roll, roll_list
 
 import plane
 import enemy
@@ -130,7 +129,7 @@ class Mission():
         # Assign Targets
         for _ in self._list_alive_enemies():
             for seat in self.plane.seats:
-                if self._can_target(self.plane.seats[seat], _.position, _.elevation):
+                if can_target(self.plane.seats[seat], _.position, _.elevation):
                     self.plane.seats[seat].targeting = _
                     print(f'{seat} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
 
@@ -152,10 +151,3 @@ class Mission():
             if _.alive:
                 alive_agressors.append(_)
         return alive_agressors
-
-    def _can_target(self, seat, position, elevation):
-        ''' Can this seat shoot this location '''
-        for _ in seat.targetable:
-            if _.get('Position') == position and _.get('Elevation') == elevation:
-                return True
-        return False

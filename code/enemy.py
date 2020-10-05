@@ -1,7 +1,7 @@
 '''
 Setup a class to hold the enemy information
 '''
-from libraries.dice import roll_list
+from libraries.tools import roll_list
 
 
 class Enemy():

@@ -1,7 +1,7 @@
 '''
 Setup a class to hold the mission information
 '''
-from libs.log import log
+from libs.log import Log
 from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
 
 import plane
@@ -36,19 +36,19 @@ class Mission():
         self.target_name = target['Name']
         self.target_distance = target['Distance']
         self.target_type = target['Type']
-        log(f'The target for today is: {self.target_name}')
-        log(f'{self.target_name} is {self.target_distance} miles away')
-        log(f'The bombing target is for: {self.target_type}')
+        Log(f'The target for today is: {self.target_name}')
+        Log(f'{self.target_name} is {self.target_distance} miles away')
+        Log(f'The bombing target is for: {self.target_type}')
 
     def mission_2(self):
         ''' Calc plane starting formation & postion '''
         position_list = ['Lead', 'Middle', 'Tail']
         self.formation_position = roll_list(position_list)
-        log(f'The bomber is: {self.formation_position} position')
+        Log(f'The bomber is: {self.formation_position} position')
 
         squadron_list = ['High', 'Middle', 'Low']
         self.squadron_position = roll_list(squadron_list)
-        log(f'The bomber is: {self.squadron_position} of the squadron')
+        Log(f'The bomber is: {self.squadron_position} of the squadron')
 
     def mission_3(self):
         ''' Calc movement for plane '''
@@ -65,16 +65,16 @@ class Mission():
 
         if self.distance_progress < self.target_distance:
             remaining = self.target_distance - self.distance_progress
-            log(f'The plane is {remaining} miles away from {self.target_name}')
+            Log(f'The plane is {remaining} miles away from {self.target_name}')
 
         if self.distance_progress > self.target_distance:
-            log(f'The plane is over the target: {self.target_name}')
+            Log(f'The plane is over the target: {self.target_name}')
             if self.heading_home:
                 self.mission_ended = True
                 print('Plane landed on 8th Airforce Airfield')
 
             if not self.heading_home:
-                log('The plane will trun around after the bombing run')
+                Log('The plane will trun around after the bombing run')
                 # Turn the plane around
                 self.heading_home = True
                 self.above_target = True
@@ -84,7 +84,7 @@ class Mission():
                 # Calculate distance roll over
                 self.distance_progress = self.distance_progress - self.target_distance
                 remaining = self.target_distance - self.distance_progress
-                log(f'The plane is {remaining} miles away from {self.target_name}')
+                Log(f'The plane is {remaining} miles away from {self.target_name}')
 
     def mission_4(self):
         ''' Calc the weather '''
@@ -98,17 +98,17 @@ class Mission():
                 # Weather worstens
                 weather_num -= 1
                 self.weather = weather_list[clamp(weather_num, 0, 3)]
-                log(f'The weather changed into: {self.weather}')
+                Log(f'The weather changed into: {self.weather}')
             if result == 2:
                 # Weather improves
                 weather_num += 1
                 self.weather = weather_list[clamp(weather_num, 0, 3)]
-                log(f'The weather changed into: {self.weather}')
+                Log(f'The weather changed into: {self.weather}')
 
         if not self.weather:
             # Calc initial weather
             self.weather = roll_list(weather_list)
-            log(f'Takeoff weather condition is: {self.weather}')
+            Log(f'Takeoff weather condition is: {self.weather}')
 
     def mission_5(self):
         ''' Calculate stress to the plane '''
@@ -128,7 +128,7 @@ class Mission():
 
         # Display all enemies in the area
         for aggressor in alive_enemies(self.enemies):
-            log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
+            Log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
 
     def mission_7(self):
         ''' Used to shoot at the enemies '''

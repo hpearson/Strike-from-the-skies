@@ -51,30 +51,6 @@ class Mission():
         log(f'The bomber is: {self.squadron_position} of the squadron')
 
     def mission_3(self):
-        ''' Calc the weather '''
-        weather_num = None
-        weather_list = ['Bad', 'Poor', 'Good', 'Great']
-        if self.weather:
-            # Calc weather changes
-            result = roll(1, 2)
-            weather_num = weather_list.index(self.weather)
-            if result == 1:
-                # Weather worstens
-                weather_num -= 1
-                self.weather = weather_list[clamp(weather_num, 0, 3)]
-                log(f'The weather changed into: {self.weather}')
-            if result == 2:
-                # Weather improves
-                weather_num += 1
-                self.weather = weather_list[clamp(weather_num, 0, 3)]
-                log(f'The weather changed into: {self.weather}')
-
-        if not self.weather:
-            # Calc initial weather
-            self.weather = roll_list(weather_list)
-            log(f'Takeoff weather condition is: {self.weather}')
-
-    def mission_4(self):
         ''' Calc movement for plane '''
         # TODO let player choose
         # TODO Ground
@@ -109,6 +85,30 @@ class Mission():
                 self.distance_progress = self.distance_progress - self.target_distance
                 remaining = self.target_distance - self.distance_progress
                 log(f'The plane is {remaining} miles away from {self.target_name}')
+
+    def mission_4(self):
+        ''' Calc the weather '''
+        weather_num = None
+        weather_list = ['Bad', 'Poor', 'Good', 'Great']
+        if self.weather:
+            # Calc weather changes
+            result = roll(1, 2)
+            weather_num = weather_list.index(self.weather)
+            if result == 1:
+                # Weather worstens
+                weather_num -= 1
+                self.weather = weather_list[clamp(weather_num, 0, 3)]
+                log(f'The weather changed into: {self.weather}')
+            if result == 2:
+                # Weather improves
+                weather_num += 1
+                self.weather = weather_list[clamp(weather_num, 0, 3)]
+                log(f'The weather changed into: {self.weather}')
+
+        if not self.weather:
+            # Calc initial weather
+            self.weather = roll_list(weather_list)
+            log(f'Takeoff weather condition is: {self.weather}')
 
     def mission_5(self):
         ''' Calculate stress to the plane '''

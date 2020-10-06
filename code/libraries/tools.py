@@ -26,9 +26,11 @@ def roll_list(input_list):
     ''' Pull 1 from list '''
     return random.choice(input_list)
 
+
 def roll_dict(input_dict):
     ''' Pull 1 from dict '''
     return random.choice(list(input_dict.keys()))
+
 
 def alive_enemies(enemies):
     ''' Filter dead enemies and return the living '''

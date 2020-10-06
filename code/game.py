@@ -18,8 +18,8 @@ class Game():
         self.mission.mission_2()  # Calc plane formation position
         # Loop
         while not self.mission.mission_ended:
-            self.mission.mission_3()  # Calc the current weather
-            self.mission.mission_4()  # Move the plane
+            self.mission.mission_3()  # Move the plane
+            self.mission.mission_4()  # Calc the current weather
             self.mission.mission_5()  # Calculate stress to plane
             self.mission.mission_6()  # Spawn enemies
             self.mission.mission_7()  # Target enemies

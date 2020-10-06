@@ -111,6 +111,13 @@ class Mission():
                 log(f'The plane is {remaining} miles away from {self.target_name}')
 
     def mission_5(self):
+        ''' Calculate stress to the plane '''
+        for section in self.plane.sections:
+            if self.plane.sections[section] < 5:
+                self.plane.sections[section] -= 1
+                print(f'{section} took stess damage')
+
+    def mission_6(self):
         ''' Used to spawn enemies '''
 
         # Spawn new enemy
@@ -123,7 +130,7 @@ class Mission():
         for aggressor in alive_enemies(self.enemies):
             log(f'{aggressor.type} comes into view {aggressor.position} o\'clock {aggressor.elevation}')
 
-    def mission_6(self):
+    def mission_7(self):
         ''' Used to shoot at the enemies '''
 
         # Assign Targets
@@ -144,7 +151,7 @@ class Mission():
                 if result == 1:
                     print(f'{seat}: Missed')
 
-    def mission_7(self):
+    def mission_8(self):
         ''' Enemies shoot at plane '''
         agressors = alive_enemies(self.enemies)
         for agressor in agressors:
@@ -154,7 +161,7 @@ class Mission():
             if result == 1:
                 print(f'{agressor.type} attacks and misses!')
 
-    def mission_8(self):
+    def mission_9(self):
         ''' Calculate flak shots '''
         result = roll(1, 2)
         if result == 2:
@@ -162,17 +169,10 @@ class Mission():
         if result == 1:
             print('Flak misses!')
 
-    def mission_9(self):
+    def mission_10(self):
         ''' Calculate damage to the plane '''
         hits = 5
         for _ in range(hits):
             section = roll_dict(self.plane.sections)
             print(f'{section} was damaged')
             self.plane.sections[section] -= 1
-
-    def mission_10(self):
-        ''' Calculate stress to the plane '''
-        for section in self.plane.sections:
-            if self.plane.sections[section] < 5:
-                self.plane.sections[section] -= 1
-                print(f'{section} took stess damage')

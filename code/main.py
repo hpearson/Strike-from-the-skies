@@ -2,7 +2,6 @@
 Bootstrap the game
 '''
 import os
-
 import game
 
 # Set the OS CWD to script location

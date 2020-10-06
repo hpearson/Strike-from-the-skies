@@ -176,3 +176,9 @@ class Mission():
             section = roll_dict(self.plane.sections)
             print(f'{section} was damaged')
             self.plane.sections[section] -= 1
+
+    def mission_11(self):
+        ''' After round cleanup '''
+        # Remove crew targets
+        for seat in self.plane.seats:
+            self.plane.seats[seat].targeting = False

@@ -71,7 +71,7 @@ class Mission():
             Log(f'The plane is over the target: {self.target_name}')
             if self.heading_home:
                 self.mission_ended = True
-                print('Plane landed on 8th Airforce Airfield')
+                Log('Plane landed on 8th Airforce Airfield')
 
             if not self.heading_home:
                 Log('The plane will trun around after the bombing run')
@@ -115,7 +115,7 @@ class Mission():
         for section in self.plane.sections:
             if self.plane.sections[section] < 5:
                 self.plane.sections[section] -= 1
-                print(f'{section} took stess damage')
+                Log(f'{section} took stess damage')
 
     def mission_6(self):
         ''' Used to spawn enemies '''
@@ -138,18 +138,18 @@ class Mission():
             for seat in self.plane.seats:
                 if can_target(self.plane.seats[seat], _.position, _.elevation):
                     self.plane.seats[seat].targeting = _
-                    print(f'{seat} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
+                    Log(f'{seat} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
 
         # Shoot at Targets
         for seat in self.plane.seats:
             if self.plane.seats[seat].targeting:
-                print(f'{seat} is shooting: {self.plane.seats[seat].targeting.type}')
+                Log(f'{seat} is shooting: {self.plane.seats[seat].targeting.type}')
                 result = roll(1, 2)
                 if result == 2:
                     self.plane.seats[seat].targeting.alive = False
-                    print(f'{seat} shot down: {self.plane.seats[seat].targeting.type}')
+                    Log(f'{seat} shot down: {self.plane.seats[seat].targeting.type}')
                 if result == 1:
-                    print(f'{seat}: Missed')
+                    Log(f'{seat}: Missed')
 
     def mission_8(self):
         ''' Enemies shoot at plane '''
@@ -157,24 +157,24 @@ class Mission():
         for agressor in agressors:
             result = roll(1, 2)
             if result == 2:
-                print(f'{agressor.type} attacks and hits!')
+                Log(f'{agressor.type} attacks and hits!')
             if result == 1:
-                print(f'{agressor.type} attacks and misses!')
+                Log(f'{agressor.type} attacks and misses!')
 
     def mission_9(self):
         ''' Calculate flak shots '''
         result = roll(1, 2)
         if result == 2:
-            print('Flak hits!')
+            Log('Flak hits!')
         if result == 1:
-            print('Flak misses!')
+            Log('Flak misses!')
 
     def mission_10(self):
         ''' Calculate damage to the plane '''
         hits = 5
         for _ in range(hits):
             section = roll_dict(self.plane.sections)
-            print(f'{section} was damaged')
+            Log(f'{section} was damaged')
             self.plane.sections[section] -= 1
 
     def mission_11(self):

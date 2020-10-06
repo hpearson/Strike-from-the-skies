@@ -2,9 +2,10 @@
 Bootstrap the game
 '''
 import os
-import game
+from objects.game import Game
 
 # Set the OS CWD to script location
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-GAME = game.Game()
+# Start the game
+Game()

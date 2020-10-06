@@ -1,8 +1,7 @@
 '''
 Setup a class to hold the game information
 '''
-
-import mission
+from objects.mission import Mission
 
 
 class Game():
@@ -11,7 +10,7 @@ class Game():
         # Start at mission zero
         self.mission = 0
         # Gen a new Mission
-        self.mission = mission.Mission()
+        self.mission = Mission()
 
         # Game Loop
         self.mission.mission_1()  # Calc target (Name, Location, Distance)

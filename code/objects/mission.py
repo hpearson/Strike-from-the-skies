@@ -4,15 +4,15 @@ Setup a class to hold the mission information
 from libs.log import Log
 from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
 
-import plane
-import enemy
+from objects.plane import Plane
+from objects.enemy import Enemy
 
 
 class Mission():
     ''' Setup Mission Vars '''
     def __init__(self):
         ''' Prep Init Values '''
-        self.plane = plane.Plane()
+        self.plane = Plane()
         self.enemies = []
 
         self.weather = None
@@ -123,7 +123,7 @@ class Mission():
         # Spawn new enemy
         result = roll(1, 3)
         for _ in range(result):
-            aggressor = enemy.Enemy()
+            aggressor = Enemy()
             self.enemies.append(aggressor)
 
         # Display all enemies in the area

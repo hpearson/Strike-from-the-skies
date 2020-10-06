@@ -12,23 +12,23 @@ class Position():
         self.twin_gun = False
         self.crew_member = crew_member
 
-        if location_name == 'Ventral Turret':
-            self.targetable.append({'Position': '12:00', 'Elevation': 'High'})
-            self.targetable.append({'Position': '12:00', 'Elevation': 'Level'})
-            self.targetable.append({'Position': '12:00', 'Elevation': 'Low'})
-            self.targetable.append({'Position': '1:30', 'Elevation': 'High'})
-            self.targetable.append({'Position': '1:30', 'Elevation': 'Level'})
-            self.targetable.append({'Position': '1:30', 'Elevation': 'Low'})
-            self.targetable.append({'Position': '3:00', 'Elevation': 'High'})
-            self.targetable.append({'Position': '3:00', 'Elevation': 'Level'})
-            self.targetable.append({'Position': '3:00', 'Elevation': 'Low'})
-            self.targetable.append({'Position': '9:00', 'Elevation': 'High'})
-            self.targetable.append({'Position': '9:00', 'Elevation': 'Level'})
-            self.targetable.append({'Position': '9:00', 'Elevation': 'Low'})
-            self.targetable.append({'Position': '10:30', 'Elevation': 'High'})
-            self.targetable.append({'Position': '10:30', 'Elevation': 'Level'})
-            self.targetable.append({'Position': '10:30', 'Elevation': 'Low'})
-            self.twin = True
+        # if location_name == 'Ventral Turret':
+        #    self.targetable.append({'Position': '12:00', 'Elevation': 'High'})
+        #    self.targetable.append({'Position': '12:00', 'Elevation': 'Level'})
+        #    self.targetable.append({'Position': '12:00', 'Elevation': 'Low'})
+        #    self.targetable.append({'Position': '1:30', 'Elevation': 'High'})
+        #    self.targetable.append({'Position': '1:30', 'Elevation': 'Level'})
+        #    self.targetable.append({'Position': '1:30', 'Elevation': 'Low'})
+        #    self.targetable.append({'Position': '3:00', 'Elevation': 'High'})
+        #    self.targetable.append({'Position': '3:00', 'Elevation': 'Level'})
+        #    self.targetable.append({'Position': '3:00', 'Elevation': 'Low'})
+        #    self.targetable.append({'Position': '9:00', 'Elevation': 'High'})
+        #    self.targetable.append({'Position': '9:00', 'Elevation': 'Level'})
+        #    self.targetable.append({'Position': '9:00', 'Elevation': 'Low'})
+        #    self.targetable.append({'Position': '10:30', 'Elevation': 'High'})
+        #    self.targetable.append({'Position': '10:30', 'Elevation': 'Level'})
+        #    self.targetable.append({'Position': '10:30', 'Elevation': 'Low'})
+        #    self.twin = True
         if location_name == 'Port Cheek':
             self.targetable.append({'Position': '12:00', 'Elevation': 'High'})
             self.targetable.append({'Position': '12:00', 'Elevation': 'Level'})

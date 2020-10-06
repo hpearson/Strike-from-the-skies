@@ -135,21 +135,22 @@ class Mission():
 
         # Assign Targets
         for _ in alive_enemies(self.enemies):
-            for seat in self.plane.seats:
-                if can_target(self.plane.seats[seat], _.position, _.elevation):
-                    self.plane.seats[seat].targeting = _
-                    Log(f'{seat} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
+            for position in self.plane.positions:
+                if can_target(self.plane.positions.get(position), _.position, _.elevation):
+                    self.plane.positions[position].crew_member.targeting = _
+                    Log(f'{position} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
 
         # Shoot at Targets
-        for seat in self.plane.seats:
-            if self.plane.seats[seat].targeting:
-                Log(f'{seat} is shooting: {self.plane.seats[seat].targeting.type}')
-                result = roll(1, 2)
-                if result == 2:
-                    self.plane.seats[seat].targeting.alive = False
-                    Log(f'{seat} shot down: {self.plane.seats[seat].targeting.type}')
-                if result == 1:
-                    Log(f'{seat}: Missed')
+        for position in self.plane.positions:
+            if self.plane.positions[position].crew_member:
+                if self.plane.positions[position].crew_member.targeting:
+                    Log(f'{position} is shooting: {self.plane.positions[position].crew_member.targeting.type}')
+                    result = roll(1, 2)
+                    if result == 2:
+                        self.plane.positions[position].crew_member.targeting.alive = False
+                        Log(f'{position} shot down: {self.plane.positions[position].crew_member.targeting.type}')
+                    if result == 1:
+                        Log(f'{position}: Missed')
 
     def mission_8(self):
         ''' Enemies shoot at plane '''
@@ -180,5 +181,6 @@ class Mission():
     def mission_11(self):
         ''' After round cleanup '''
         # Remove crew targets
-        for seat in self.plane.seats:
-            self.plane.seats[seat].targeting = False
+        for position in self.plane.positions:
+            if self.plane.positions[position].crew_member:
+                self.plane.positions[position].crew_member.targeting = False

@@ -6,6 +6,9 @@ import random
 
 def can_target(seat, position, elevation):
     ''' Can this seat shoot this enemy location '''
+    if not seat.crew_member:
+        return False
+
     for _ in seat.targetable:
         if _.get('Position') == position and _.get('Elevation') == elevation:
             return True

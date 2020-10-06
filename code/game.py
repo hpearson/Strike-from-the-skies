@@ -22,7 +22,7 @@ class Game():
             self.mission.mission_4()  # Calc the current weather
             self.mission.mission_5()  # Calculate stress to plane
             self.mission.mission_6()  # Spawn enemies
-            self.mission.mission_7()  # Target enemies
+            self.mission.mission_7()  # Actions / Target enemies
             self.mission.mission_8()  # Enemies target
             self.mission.mission_9()  # Flak target
             self.mission.mission_10()  # Calculate damge to plane

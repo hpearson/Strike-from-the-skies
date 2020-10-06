@@ -1,8 +1,8 @@
 '''
 Setup a class to hold the mission information
 '''
-from libraries.log import log
-from libraries.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
+from libs.log import log
+from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
 
 import plane
 import enemy

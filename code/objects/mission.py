@@ -141,10 +141,16 @@ class Mission():
 
         # Ask player who to shoot
         for turret in ready_to_shoot(self.plane.positions):
+            selectable = [] # Store who this turret can target
             for enemy in self.plane.positions.get(turret).crew_member.targetable:
-                # Select Last target
-                self.plane.positions[turret].crew_member.targeting = enemy
-                Log(f'{turret} is targeting: {enemy.type} {enemy.position} o\'clock {enemy.elevation}')
+                Log(f'{turret} can target ({len(selectable)}): {enemy.type} {enemy.position} o\'clock {enemy.elevation}')
+                selectable.append(enemy)
+
+            # Is there at least 1 target for this turret?
+            if selectable:
+                picked = 0  # TODO Enable for manual input int(input("Enter target: "))
+                Log(f'{turret} is targeting: {selectable[picked].type} {selectable[picked].position} o\'clock {selectable[picked].elevation}')
+                self.plane.positions[turret].crew_member.targeting = selectable[picked]
 
         # Shoot at Targets
         for turret in ready_to_shoot(self.plane.positions):

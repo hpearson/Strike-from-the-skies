@@ -119,7 +119,6 @@ class Mission():
 
     def mission_6(self):
         ''' Used to spawn enemies '''
-
         # Spawn new enemy
         result = roll(1, 3)
         for _ in range(result):
@@ -132,7 +131,6 @@ class Mission():
 
     def mission_7(self):
         ''' Used to shoot at the enemies '''
-
         # Assign Targets
         for _ in alive_enemies(self.enemies):
             for turret in ready_to_shoot(self.plane.positions):

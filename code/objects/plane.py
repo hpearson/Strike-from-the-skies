@@ -9,6 +9,7 @@ class Plane():
     ''' Setup Game Vars '''
     def __init__(self):
         ''' Prep Init Values '''
+        self.type = ''
         self.max_speed = 300
         self.cur_speed = 100
 

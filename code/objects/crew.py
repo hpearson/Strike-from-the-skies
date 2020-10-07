@@ -12,3 +12,4 @@ class Crew():
         self.age = None
         self.training = training
         self.targeting = None
+        self.alive = True

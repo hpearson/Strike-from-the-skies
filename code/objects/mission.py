@@ -2,7 +2,7 @@
 Setup a class to hold the mission information
 '''
 from libs.log import Log
-from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies
+from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enemies, ready_to_shoot
 
 from objects.plane import Plane
 from objects.enemy import Enemy
@@ -135,22 +135,21 @@ class Mission():
 
         # Assign Targets
         for _ in alive_enemies(self.enemies):
-            for position in self.plane.positions:
-                if can_target(self.plane.positions.get(position), _.position, _.elevation):
-                    self.plane.positions[position].crew_member.targeting = _
-                    Log(f'{position} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
+            for turret in ready_to_shoot(self.plane.positions):
+                if can_target(self.plane.positions.get(turret), _.position, _.elevation):
+                    self.plane.positions[turret].crew_member.targeting = _
+                    Log(f'{turret} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
 
         # Shoot at Targets
-        for position in self.plane.positions:
-            if self.plane.positions[position].crew_member:
-                if self.plane.positions[position].crew_member.targeting:
-                    Log(f'{position} is shooting: {self.plane.positions[position].crew_member.targeting.type}')
-                    result = roll(1, 2)
-                    if result == 2:
-                        self.plane.positions[position].crew_member.targeting.alive = False
-                        Log(f'{position} shot down: {self.plane.positions[position].crew_member.targeting.type}')
-                    if result == 1:
-                        Log(f'{position}: Missed')
+        for turret in ready_to_shoot(self.plane.positions):
+            if self.plane.positions[turret].crew_member.targeting:
+                Log(f'{turret} is shooting: {self.plane.positions[turret].crew_member.targeting.type}')
+                result = roll(1, 2)
+                if result == 2:
+                    self.plane.positions[turret].crew_member.targeting.alive = False
+                    Log(f'{turret} shot down: {self.plane.positions[turret].crew_member.targeting.type}')
+                if result == 1:
+                    Log(f'{turret}: Missed')
 
     def mission_8(self):
         ''' Enemies shoot at plane '''

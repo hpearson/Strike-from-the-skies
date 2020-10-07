@@ -42,3 +42,23 @@ def alive_enemies(enemies):
         if _.alive:
             alive_agressors.append(_)
     return alive_agressors
+
+
+def ready_to_shoot(positions):
+    ''' Return seats that can shoot '''
+    output = []
+    for position in positions:
+        # Seat must have a gun
+        if not positions[position].targetable:
+            continue
+        # Seat must be crewed
+        if not positions[position].crew_member:
+            continue
+        # Crew member must be alive
+        if not positions[position].crew_member.alive:
+            continue
+        # Gun must have ammo
+        if positions[position].ammo == 0:
+            continue
+        output.append(position)
+    return output

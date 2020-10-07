@@ -9,6 +9,6 @@ class Enemy():
     def __init__(self):
         ''' Prep Init Values '''
         self.type = roll_list(['Me 109', 'Me 101', 'Fw 190'])
-        self.position = roll_list(['10:30', '12:00', '1:30', '3:00', '6:00', '9:00'])
+        self.position = roll_list(['12:00', '1:30', '3:00', '4:30', '6:00', '7:30', '9:00', '10:30'])
         self.elevation = roll_list(['Low', 'Level', 'High'])
         self.alive = True

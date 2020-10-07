@@ -24,10 +24,10 @@ class Plane():
             'Starboard Cheek': Position('Starboard Cheek'),
             'Dorsal Turret': Position('Dorsal Turret'),
             'Dorsal': Position('Dorsal'),
-            'Ventral Ball Turret': Position('Ventral Ball Turret', Crew('Radio')),
-            'Port Waist': Position('Port Waist', Crew('Radio')),
-            'Starboard Waist': Position('Starboard Waist', Crew('Radio')),
-            'Tail Turret': Position('Tail Turret', Crew('Radio'))
+            'Ventral Ball Turret': Position('Ventral Ball Turret', Crew('Gunner')),
+            'Port Waist': Position('Port Waist', Crew('Gunner')),
+            'Starboard Waist': Position('Starboard Waist', Crew('Gunner')),
+            'Tail Turret': Position('Tail Turret', Crew('Gunner'))
         }
         self.sections = {
             'Nose': 10,

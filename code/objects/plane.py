@@ -20,7 +20,6 @@ class Plane():
             'CoPilot Seat': Position('CoPilot Seat', Crew('CoPilot')),
             'Engineer Pannel': Position('Engineer Seat', Crew('Engineer')),
             'Radio Seat': Position('Radio Seat', Crew('Radio')),
-            # 'Ventral Turret': Position('Ventral Turret'),
             'Port Cheek': Position('Port Cheek'),
             'Starboard Cheek': Position('Starboard Cheek'),
             'Dorsal Turret': Position('Dorsal Turret'),

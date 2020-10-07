@@ -131,6 +131,7 @@ class Mission():
 
     def mission_7(self):
         ''' Used to shoot at the enemies '''
+        # TODO Player actions (movement)
         # Assign Targets
         for _ in alive_enemies(self.enemies):
             for turret in ready_to_shoot(self.plane.positions):

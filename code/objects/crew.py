@@ -11,5 +11,6 @@ class Crew():
         self.last_name = 'Pearson'
         self.age = None
         self.training = training
+        self.targetable = []
         self.targeting = None
         self.alive = True

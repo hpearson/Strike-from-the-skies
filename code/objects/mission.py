@@ -133,11 +133,18 @@ class Mission():
         ''' Used to shoot at the enemies '''
         # TODO Player actions (movement)
         # Assign Targets
-        for _ in alive_enemies(self.enemies):
+        for enemy in alive_enemies(self.enemies):
             for turret in ready_to_shoot(self.plane.positions):
-                if can_target(self.plane.positions.get(turret), _.position, _.elevation):
-                    self.plane.positions[turret].crew_member.targeting = _
-                    Log(f'{turret} is targeting: {_.type} {_.position} o\'clock {_.elevation}')
+                if can_target(self.plane.positions.get(turret), enemy.position, enemy.elevation):
+                    self.plane.positions.get(turret).crew_member.targetable.append(enemy)
+                    Log(f'{turret} can shoot: {enemy.type} {enemy.position} o\'clock {enemy.elevation}')
+
+        # Ask player who to shoot
+        for turret in ready_to_shoot(self.plane.positions):
+            for enemy in self.plane.positions.get(turret).crew_member.targetable:
+                # Select Last target
+                self.plane.positions[turret].crew_member.targeting = enemy
+                Log(f'{turret} is targeting: {enemy.type} {enemy.position} o\'clock {enemy.elevation}')
 
         # Shoot at Targets
         for turret in ready_to_shoot(self.plane.positions):
@@ -181,4 +188,5 @@ class Mission():
         # Remove crew targets
         for position in self.plane.positions:
             if self.plane.positions[position].crew_member:
+                self.plane.positions[position].crew_member.targetable = []
                 self.plane.positions[position].crew_member.targeting = False

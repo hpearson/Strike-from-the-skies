@@ -33,7 +33,7 @@ class Mission():
         target_list.append({'Name': 'Berlin', 'Distance': 1000, 'Type': 'City'})
         target_list.append({'Name': 'Paris', 'Distance': 900, 'Type': 'City'})
         target_list.append({'Name': 'Kiev', 'Distance': 800, 'Type': 'City'})
-        target = roll_list(target_list)  
+        target = roll_list(target_list)
 
         # TODO Enable for manual input
         #Log('Targets available:')

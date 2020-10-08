@@ -31,8 +31,16 @@ class Mission():
         target_list = []
         # Location Name, Distance, Type
         target_list.append({'Name': 'Berlin', 'Distance': 1000, 'Type': 'City'})
-        # Load in more targets
-        target = roll_list(target_list)
+        target_list.append({'Name': 'Paris', 'Distance': 900, 'Type': 'City'})
+        target_list.append({'Name': 'Kiev', 'Distance': 800, 'Type': 'City'})
+        target = roll_list(target_list)  
+
+        # TODO Enable for manual input
+        #Log('Targets available:')
+        #for _, target in enumerate(target_list):
+        #    print(f'({_}) {target["Name"]} {target["Type"]} {target["Distance"]} miles')
+        #target = target_list[int(input("Enter target: "))]
+
         self.target_name = target['Name']
         self.target_distance = target['Distance']
         self.target_type = target['Type']

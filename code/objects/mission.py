@@ -6,7 +6,6 @@ from libs.tools import clamp, can_target, roll, roll_list, roll_dict, alive_enem
 
 from objects.plane import Plane
 from objects.enemy import Enemy
-from settings.settings import Settings
 
 
 class Mission():

@@ -32,4 +32,4 @@ class Game():
 
 
 # Start the game
-Game()
+# Game()

@@ -1,7 +1,10 @@
 '''
 Setup a class to hold the game information
 '''
+import os
 from objects.mission import Mission
+# Set the OS CWD to script location
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 
 class Game():
@@ -26,3 +29,7 @@ class Game():
             self.mission.mission_9()  # Flak target
             self.mission.mission_10()  # Calculate damge to plane
             self.mission.mission_11()  # After round cleanup
+
+
+# Start the game
+Game()

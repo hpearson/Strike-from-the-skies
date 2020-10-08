@@ -9,7 +9,7 @@
 			"type": "python",
 			"request": "launch",
 			//"program": "${file}",
-			"program": "code/main.py",
+			"program": "code/game.py",
 			//"program": "${file}",
 			"console": "integratedTerminal"
 		}

@@ -3,13 +3,18 @@
         ".vscode": true,
         "**/__pycache__": true,
         "**/*.pyc": true,
-        "**/venv": true,
+        "env": true,
         "*.code-workspace": true,
-        ".pylintrc": true,
-        ".gitignore": true
+        ".flaskenv": true,
+        "requirements.txt": true,
+        ".gitignore": true,
+        ".pylintrc": true
     }
     ,"python.linting.pycodestyleEnabled": true
     ,"python.linting.pycodestyleArgs": ["--max-line-length=160"]
     ,"python.linting.pylintEnabled": true
-    ,"python.linting.pylintArgs": ["--disable", "line-too-long, no-name-in-module, import-error"]
+    ,"python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint-flask"
+    ],
 }

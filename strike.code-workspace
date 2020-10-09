@@ -6,5 +6,28 @@
 	],
 	"settings": {
 		"editor.insertSpaces": false
+	},
+	"launch": {
+		"configurations": [
+			{
+				"name": "Python: Flask",
+				"type": "python",
+				"request": "launch",
+				"module": "flask",
+				"env": {
+					"FLASK_APP": "${workspaceFolder}/runserver.py",
+					"FLASK_ENV": "development",
+					"FLASK_DEBUG": "1"
+				},
+				"args": [
+					"run",
+					"--host=0.0.0.0",
+					//"--no-debugger",
+					//"--no-reload",
+					"--port=80"
+				],
+				"jinja": true
+			}
+		]
 	}
 }

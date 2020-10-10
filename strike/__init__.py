@@ -7,13 +7,14 @@ from flask_debugtoolbar import DebugToolbarExtension
 import logging
 import os
 from datetime import datetime
-
+import pickle
 
 app = Flask('strike')
 app.config['SECRET_KEY'] = 'Q3JlYXRlZCBieTogSHVudGVyIFBlYXJzb24='
 app.debug = True
 # Application configs
 app.config['LOG_PATH'] = os.getcwd() + '\\strike\\log\\'
+app.config['STORAGE'] = os.getcwd() + '\\strike\\storage\\'
 # Database configs
 
 # Dump in configurations
@@ -41,6 +42,18 @@ app.config['DEBUG_TB_PANELS'] = [
     'flask_debugtoolbar.panels.config_vars.ConfigVarsDebugPanel',
     'flask_debugtoolbar.panels.timer.TimerDebugPanel',
 ]
+
+
+class storage():
+    def send(id, content):
+        with open(f"{app.config['STORAGE'] + id}.pkl", 'wb') as pickle_out:
+            pickle.dump(content, pickle_out)
+
+    def retrieve(id):
+        with open(f"{app.config['STORAGE'] + id}.pkl", 'rb') as pickle_in:
+            unpickled_cucumber = pickle.load(pickle_in)
+        return unpickled_cucumber
+
 
 # app needs to be created before it can be used by the controllers
 from strike.controllers import *  # noqa: E402 pylint: disable=C0413

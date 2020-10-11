@@ -1,30 +1,34 @@
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | The target for today is: Berlin
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Berlin is 1000 miles away
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | The bombing target is for: City
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | The bomber is: Lead position
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | The bomber is: Middle of the squadron
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | The plane is 900 miles away from Berlin
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Takeoff weather condition is: Bad
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Me 109 comes into view 9:00 o'clock High
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Me 109 comes into view 10:30 o'clock Low
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Me 101 comes into view 12:00 o'clock Level
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Engineer is targeting: Me 109 9:00 o'clock High
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Port is targeting: Me 109 9:00 o'clock High
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Navigator is targeting: Me 109 10:30 o'clock Low
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Bombardier is targeting: Me 101 12:00 o'clock Level
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Engineer is targeting: Me 101 12:00 o'clock Level
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Bombardier is shooting: Me 101
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Bombardier: Missed
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Navigator is shooting: Me 109
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Navigator shot down: Me 109
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Engineer is shooting: Me 101
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Engineer shot down: Me 101
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Port is shooting: Me 109
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Port: Missed
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Me 109 attacks and hits!
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Flak hits!
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Nose was damaged
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Starboard was damaged
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Tail was damaged
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Port was damaged
-10/11/2020 04:01 PM | INFO       | Strike-from-the-skies | Starboard was damaged
+10/11/2020 04:09 PM | WARNING    | werkzeug |  * Debugger is active!
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | The target for today is: Berlin
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Berlin is 1000 miles away
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | The bombing target is for: City
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | The bomber is: Middle position
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | The bomber is: Middle of the squadron
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | The plane is 900 miles away from Berlin
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Takeoff weather condition is: Poor
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Fw 190 comes into view 6:00 o'clock Low
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Fw 190 comes into view 12:00 o'clock Low
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Me 101 comes into view 9:00 o'clock Level
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Ball is targeting: Fw 190 6:00 o'clock Low
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Tail is targeting: Fw 190 6:00 o'clock Low
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Bombardier is targeting: Fw 190 12:00 o'clock Low
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Engineer is targeting: Me 101 9:00 o'clock Level
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Ball is targeting: Me 101 9:00 o'clock Level
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Port is targeting: Me 101 9:00 o'clock Level
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Bombardier is shooting: Fw 190
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Bombardier shot down: Fw 190
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Engineer is shooting: Me 101
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Engineer: Missed
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Ball is shooting: Me 101
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Ball: Missed
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Port is shooting: Me 101
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Port: Missed
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Tail is shooting: Fw 190
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Tail shot down: Fw 190
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Me 101 attacks and hits!
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Flak misses!
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Port was damaged
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Tail was damaged
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Nose was damaged
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Middle was damaged
+10/11/2020 04:09 PM | INFO       | Strike-from-the-skies | asd | Port was damaged

@@ -31,5 +31,4 @@ def hello_world():
 
 @app.route('/dashboard')
 def dashboard():
-    app.log.info('logged in successfully')
     return render_template('dashboard.html')

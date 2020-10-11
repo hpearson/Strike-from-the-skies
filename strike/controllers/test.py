@@ -31,4 +31,5 @@ def hello_world():
 
 @app.route('/dashboard')
 def dashboard():
+    Log(f'The bomber is: position')
     return render_template('dashboard.html')

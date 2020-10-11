@@ -13,10 +13,9 @@ class Log():
         '''
         Setup and load logging configs
         '''
-
-        text = f'{flask_login.current_user.username} | {text}'
-
-
+        # Add username if user is signed in
+        if hasattr(flask_login.current_user, 'username'):
+            text = f'{flask_login.current_user.username} | {text}'
         # Print to console
         print(text)
         # Save into the log

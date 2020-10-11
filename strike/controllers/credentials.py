@@ -18,17 +18,19 @@ def login():
     flask_login.logout_user()
     if flask.request.method == 'GET':
         return '''
+               <body>
                <form action='login' method='POST'>
                 <input type='text' name='username' id='username' placeholder='username'/>
                 <input type='password' name='password' id='password' placeholder='password'/>
                 <input type='submit' name='submit'/>
                </form>
+               </body>
                '''
 
     username = flask.request.form['username']
     password = flask.request.form['password']
-
     for _ in users:
+        # print(_[])
         if username == _.username and password == _.password:
             flask_login.login_user(_)
             return flask.redirect(flask.url_for('protected'))
@@ -51,8 +53,10 @@ def logout():
 @login_manager.user_loader
 def user_loader(id):
     # User already signed in so reload DB
-    user = users[int(id)]
-    return user
+    for user in users:
+        user.id == id
+        return user
+    return
 
 
 @login_manager.unauthorized_handler

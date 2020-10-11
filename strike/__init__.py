@@ -15,7 +15,7 @@ app.debug = True
 # Application configs
 app.config['LOG_PATH'] = os.getcwd() + '\\strike\\log\\'
 app.config['STORAGE'] = os.getcwd() + '\\strike\\storage\\'
-app.config['CRED_STORAGE'] = os.getcwd() + '\\strike\\storage\\credentials\\'
+app.config['CRED_STORAGE'] = os.getcwd() + '\\strike\\models\\'
 # Database configs
 
 # Dump in configurations
@@ -32,7 +32,7 @@ logging.basicConfig(filename=logfile, filemode='w', level=logging.INFO, format=t
 
 # Flask setup settings (Debug)
 toolbar = DebugToolbarExtension(app)
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 app.config['DEBUG_TB_PANELS'] = [
     'flask_debugtoolbar.panels.versions.VersionDebugPanel',
     'flask_debugtoolbar.panels.route_list.RouteListDebugPanel',

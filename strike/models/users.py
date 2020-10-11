@@ -18,9 +18,10 @@ class User(flask_login.UserMixin):
 
 
 #####################################
-# Load mock database
-users = [
-    User(0, 'Hunter', 'Pearson'),
-    User(1, 'asd', 'asd')
-]
+# Load creds from JSON file
+users = []
+with open(app.config['CRED_STORAGE'] + 'users.json', 'r') as read_file:
+    file = json.load(read_file)
+    for _ in file['users']:
+        users.append(User(_['id'], _['username'], _['password']))
 #####################################

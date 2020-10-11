@@ -7,18 +7,15 @@ from strike.objects.game import Game
 from strike.objects.mission import Mission
 from strike.libraries import *
 # from strike.models.store import *
-
 import flask_login
 
 
 @app.route('/')
+@flask_login.login_required
 def hello_world():
-    if not session.get('id'):
-        session['id'] = str(uuid.uuid4())
-
-    storage.send(session['id'], Mission())
-    mission = storage.retrieve(session['id'])
-    mission.mission_1()
+    storage.send(flask_login.current_user.id, Mission())
+    mission = storage.retrieve(flask_login.current_user.id)
+    mission.mission_1()  # Calc the target
     mission.mission_2()  # Calc plane formation position
     mission.mission_3()  # Move the plane
     mission.mission_4()  # Calc the current weather
@@ -33,7 +30,6 @@ def hello_world():
 
 
 @app.route('/dashboard')
-@flask_login.login_required
 def dashboard():
     app.log.info('logged in successfully')
     return render_template('dashboard.html')

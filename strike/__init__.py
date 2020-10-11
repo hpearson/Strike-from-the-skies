@@ -15,6 +15,7 @@ app.debug = True
 # Application configs
 app.config['LOG_PATH'] = os.getcwd() + '\\strike\\log\\'
 app.config['STORAGE'] = os.getcwd() + '\\strike\\storage\\'
+app.config['CRED_STORAGE'] = os.getcwd() + '\\strike\\storage\\credentials\\'
 # Database configs
 
 # Dump in configurations
@@ -46,11 +47,11 @@ app.config['DEBUG_TB_PANELS'] = [
 
 class storage():
     def send(id, content):
-        with open(f"{app.config['STORAGE'] + id}.pkl", 'wb') as pickle_out:
+        with open(f"{app.config['STORAGE'] + str(id)}.pkl", 'wb') as pickle_out:
             pickle.dump(content, pickle_out)
 
     def retrieve(id):
-        with open(f"{app.config['STORAGE'] + id}.pkl", 'rb') as pickle_in:
+        with open(f"{app.config['STORAGE'] + str(id)}.pkl", 'rb') as pickle_in:
             unpickled_cucumber = pickle.load(pickle_in)
         return unpickled_cucumber
 

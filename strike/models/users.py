@@ -13,9 +13,6 @@ class User(flask_login.UserMixin):
         self.username = username
         self.password = password
 
-    def __str__(self):
-        return "User(id='%s')" % self.id
-
 
 #####################################
 # Load creds from JSON file

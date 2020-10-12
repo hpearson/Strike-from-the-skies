@@ -45,7 +45,7 @@ def logout():
 @login_manager.unauthorized_handler
 def unauthorized_handler():
     ''' Route for 'Unauthorized' '''
-    return render_template('credentials/unauthorized.html')
+    return flask.redirect(flask.url_for('login'))
 
 
 @login_manager.user_loader

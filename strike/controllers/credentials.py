@@ -5,7 +5,7 @@ import flask
 import flask_login
 from strike import app
 from strike.libraries import *
-from strike.models.users import User, users
+from strike.models.users import users
 
 
 # Prep for flask login manager
@@ -15,6 +15,7 @@ login_manager.init_app(app)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    ''' Route for 'login' '''
     flask_login.logout_user()
     if flask.request.method == 'GET':
         return '''
@@ -30,7 +31,6 @@ def login():
     username = flask.request.form['username']
     password = flask.request.form['password']
     for _ in users:
-        # print(_[])
         if username == _.username and password == _.password:
             flask_login.login_user(_)
             return flask.redirect(flask.url_for('protected'))
@@ -40,25 +40,28 @@ def login():
 @app.route('/protected')
 @flask_login.login_required
 def protected():
+    ''' Route for 'protected' '''
     return 'Logged in as: ' + str(flask_login.current_user.id) + flask_login.current_user.username
 
 
 @app.route('/logout')
 def logout():
+    ''' Route for 'logout' '''
     flask_login.logout_user()
     return 'Logged out'
 
 
-# Reread the user session
 @login_manager.user_loader
-def user_loader(id):
-    # User already signed in so reload DB
+def user_loader(key):
+    ''' reload DB from session '''
     for user in users:
-        user.id == id
-        return user
-    return
+        if user.id == key:
+            return user
+    return False
 
 
+@app.route('/unauthorized')
 @login_manager.unauthorized_handler
 def unauthorized_handler():
+    ''' Route for 'Unauthorized' '''
     return 'Unauthorized'

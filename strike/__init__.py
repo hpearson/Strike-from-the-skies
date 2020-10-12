@@ -2,12 +2,13 @@
 Bootstrap the application and set configs
 '''
 __version__ = '0.1'
-from flask import Flask
-from flask_debugtoolbar import DebugToolbarExtension
 import logging
 import os
-from datetime import datetime
 import pickle
+from datetime import datetime
+from flask import Flask
+from flask_debugtoolbar import DebugToolbarExtension
+
 
 app = Flask('strike')
 app.config['SECRET_KEY'] = 'Q3JlYXRlZCBieTogSHVudGVyIFBlYXJzb24='
@@ -25,10 +26,13 @@ log.setLevel(logging.ERROR)
 
 # Setup for custom logger
 app.log = logging.getLogger('Strike-from-the-skies')
-logfile = app.config['LOG_PATH'] + datetime.now().strftime("%m.%d.%Y")+'.log'
-text_format = '%(asctime)s | %(levelname)-10s | %(name)s | %(message)s'
-time_format = "%m/%d/%Y %I:%M %p"
-logging.basicConfig(filename=logfile, filemode='w', level=logging.INFO, format=text_format, datefmt=time_format)
+logging.basicConfig(
+    filename=app.config['LOG_PATH'] + datetime.now().strftime("%m.%d.%Y")+'.log',
+    filemode='w',
+    level=logging.INFO,
+    format='%(asctime)s | %(levelname)-10s | %(name)s | %(message)s',
+    datefmt="%m/%d/%Y %I:%M %p"
+)
 
 # Flask setup settings (Debug)
 toolbar = DebugToolbarExtension(app)
@@ -45,13 +49,18 @@ app.config['DEBUG_TB_PANELS'] = [
 ]
 
 
-class storage():
-    def send(id, content):
-        with open(f"{app.config['STORAGE'] + str(id)}.pkl", 'wb') as pickle_out:
+class Storage():
+    ''' Used to send/retrieve pickle files '''
+    @staticmethod
+    def send(key, content):
+        ''' Send python to pickle file '''
+        with open(f"{app.config['STORAGE'] + key}.pkl", 'wb') as pickle_out:
             pickle.dump(content, pickle_out)
 
-    def retrieve(id):
-        with open(f"{app.config['STORAGE'] + str(id)}.pkl", 'rb') as pickle_in:
+    @staticmethod
+    def retrieve(key):
+        ''' Read pickle file into python '''
+        with open(f"{app.config['STORAGE'] + key}.pkl", 'rb') as pickle_in:
             unpickled_cucumber = pickle.load(pickle_in)
         return unpickled_cucumber
 

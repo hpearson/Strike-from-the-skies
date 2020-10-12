@@ -1,10 +1,8 @@
 '''
 Use this libarie create console logs & print to file
 '''
-import logging
-from datetime import datetime
-from strike import app
 import flask_login
+from strike import app
 
 
 class Log():

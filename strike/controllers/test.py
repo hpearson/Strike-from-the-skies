@@ -4,7 +4,7 @@ Used to test the application
 import flask_login
 from flask import render_template
 from strike import app, Storage
-from strike.objects.mission import Mission
+from strike.logic.mission import Mission
 from strike.libraries import *
 
 
@@ -12,7 +12,9 @@ from strike.libraries import *
 @flask_login.login_required
 def index():
     ''' Route for 'hello_world' '''
+    # Store the game object
     Storage.send(flask_login.current_user.id, Mission())
+    # Read the game object
     mission = Storage.retrieve(flask_login.current_user.id)
     mission.mission_1()  # Calc the target
     mission.mission_2()  # Calc plane formation position

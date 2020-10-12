@@ -2,9 +2,8 @@
 Setup a class to hold the mission information
 '''
 from strike.libraries import *
-
-from strike.objects.plane import Plane
-from strike.objects.enemy import Enemy
+from strike.logic.plane import Plane
+from strike.logic.enemy import Enemy
 
 
 class Mission():

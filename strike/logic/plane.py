@@ -1,7 +1,7 @@
 '''
 Setup a class to hold the plane information
 '''
-from strike.objects.crew import Crew
+from strike.logic.crew import Crew
 
 
 class Plane():

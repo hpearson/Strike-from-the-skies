@@ -6,9 +6,9 @@
         "env": true,
         "*.code-workspace": true,
         ".flaskenv": true,
-        "requirements.txt": true,
         ".gitignore": true,
-        ".pylintrc": true
+        ".pylintrc": true,
+        "*/storage": true
     }
     ,"python.linting.pycodestyleEnabled": true
     ,"python.linting.pycodestyleArgs": ["--max-line-length=160"]

@@ -10,7 +10,7 @@ from strike.libraries import *
 
 @app.route('/')
 @flask_login.login_required
-def hello_world():
+def index():
     ''' Route for 'hello_world' '''
     Storage.send(flask_login.current_user.id, Mission())
     mission = Storage.retrieve(flask_login.current_user.id)
